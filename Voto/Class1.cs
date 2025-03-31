@@ -1,44 +1,32 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Voto
+﻿namespace Voto
 {
-   public class Pessoa
+    public class Pessoa
     {
         public string Nome { get; set; }
         public int Idade { get; set; }
-
-        public bool Pode {  get; set; }
-
-
+        public bool Pode { get; set; }
 
         public Pessoa(string pNome, int pIdade)
         {
             Nome = pNome;
             Idade = pIdade;
+            Pode = PodeVotar(); 
         }
-
-
-
-        public podeVotar(int Idade, bool Pode)
+        private bool PodeVotar() 
         {
-            if (Idade < 16 | Idade >= 0)
+            if (Idade < 16)
             {
-                Pode = false;
+                return false;
             }
-            else if (Idade <= 17 | Idade >= 16)
+            else if (Idade >= 16 && 16 < 18)
             {
-                Pode = true;
+                return true;
+
             }
             else
             {
-                Pode = true;
+                return true;
             }
-
-            return Pode;
         }
-
+    }
 }
